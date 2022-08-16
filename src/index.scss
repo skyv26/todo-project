@@ -1,0 +1,112 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --animation-delay-time: 0.5s;
+  --common-bg: white;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  align-content: flex-start;
+  background-color: lightblue;
+}
+
+.space {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+%d-flex {
+  display: flex;
+}
+
+#root {
+  width: 60%;
+  margin: auto;
+  margin-top: 10rem;
+  border: thin solid rgb(152, 152, 152);
+}
+
+ul {
+  list-style: none;
+}
+
+// Header Style
+
+.todo__header {
+  @extend %d-flex;
+
+  background-color: white;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: thin solid rgb(224, 224, 224);
+
+  &-logo {
+    font-size: 2.5rem;
+  }
+
+  &-refreshButton {
+    @extend %d-flex;
+
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: gray;
+  }
+}
+
+.todo__main {
+  @extend %d-flex;
+
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+
+  &-form {
+    @extend %d-flex;
+
+    position: relative;
+    width: 100%;
+    background-color: white;
+    padding: 0 1rem;
+
+    &_taskInput {
+      height: 5rem;
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 1.6rem;
+      background-color: transparent;
+      font-style: italic;
+    }
+
+    &_submitButton {
+      position: absolute;
+      font-size: 1.6rem;
+      border: none;
+      height: inherit;
+      background: transparent;
+      right: 1rem;
+      top: 50%;
+      color: rgb(153, 153, 153);
+      padding: 0 0.4rem;
+      transform: translate(0, -50%) rotate(90deg);
+      cursor: pointer;
+    }
+  }
+}
